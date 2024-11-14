@@ -237,7 +237,7 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         padding-left: 0px;
         grid-gap: 30px;
-        margin: 100px 250px 150px 250px;
+        margin: 100px 200px 150px 200px;
       }
       .reviews li {
         list-style-type: none;
@@ -246,7 +246,7 @@
         font-size: 20px;
         font-style: italic;
         line-height: 2;
-        padding: 50px 50px 50px 50px;
+        padding: 60px 40px 60px 40px;
         border-radius: 20px;
       }
 
@@ -287,6 +287,51 @@
       }
       .author a {
         color: var(--background-color);
+      }
+      @media (max-width: 800px) {
+        body {
+          text-align: center;
+        }
+        h1 {
+          font-size: 50;
+        }
+        h3 {
+          font-size: 20;
+        }
+
+        header .header-grid {
+          grid-template-columns: 1fr 1fr;
+          margin-top: 20px;
+        }
+        header .header-grid-main {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+
+        header img {
+          width: 100px;
+          margin-top: 10px;
+        }
+        header a {
+          font-size: 35px;
+        }
+
+        .about p {
+          padding: 20px 20px 50px 20px;
+        }
+        .creators {
+          grid-template-columns: 1fr;
+          margin: 50px 20px 50px 20px;
+        }
+
+        .topics ul {
+          grid-template-columns: 1fr 1fr;
+          margin-left: 40px;
+        }
+        .reviews ul {
+          grid-template-columns: 1fr;
+          margin: 50px 40px 50px 40px;
+        }
       }
     </style>
   </head>
