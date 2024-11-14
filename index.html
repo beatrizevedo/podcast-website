@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aladin&family=Forum&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/36e4ee0fbb.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Favorite Podcast</title>
+    <style>
+      :root {
+        --background-color: #fdf3dd;
+        --main-text-color: #373d3b;
+        --pink: #caaacd;
+        --cream: #cb962f;
+        --blue: #c5dcf3;
+        --orange: #ef601e;
+        --beige: #f1dfb6;
+      }
+      body {
+        background-color: var(--background-color);
+        margin: 0px 0px 0px 0px;
+        font-family: forum;
+      }
+      header {
+        font-family: Aladin;
+        font-size: 40px;
+        text-align: center;
+      }
+      header h1 {
+        font-size: 65px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        color: var(--main-text-color);
+      }
+      header a {
+        text-decoration: none;
+      }
+      header .header-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 30px;
+        padding: 50px 50px 50px 50px;
+        margin-top: 70px;
+      }
+
+      header .header-grid-main {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        padding: 30px 20px 30px 20px;
+        background-color: var(--blue);
+        border-radius: 20px;
+      }
+      header .header-grid-main a {
+        color: var(--cream);
+      }
+      header .header-grid-main img {
+        margin-bottom: 20px;
+        margin-top: 10px;
+      }
+
+      header .style-pink {
+        background-color: var(--pink);
+        border-radius: 20px;
+        padding-top: 30px;
+      }
+      header .style-pink a {
+        color: var(--background-color);
+      }
+      header .style-cream {
+        background-color: var(--cream);
+        border-radius: 20px;
+        padding-top: 30px;
+      }
+      header .style-cream a {
+        color: var(--background-color);
+      }
+      header .style-orange {
+        background-color: var(--orange);
+        border-radius: 20px;
+        padding-top: 30px;
+      }
+      header .style-orange a {
+        color: var(--blue);
+      }
+      header .style-blue {
+        background-color: var(--blue);
+        border-radius: 20px;
+        padding-top: 30px;
+      }
+      header .style-blue a {
+        color: var(--main-text-color);
+      }
+      header .style-beige {
+        background-color: var(--beige);
+        border-radius: 20px;
+        padding-top: 30px;
+      }
+      header .style-beige a {
+        color: var(--orange);
+      }
+
+      h3 {
+        text-align: center;
+        font-family: Aladin;
+        font-size: 50px;
+      }
+      .about h3 {
+        color: var(--cream);
+        margin-top: 100px;
+      }
+      .about p {
+        text-align: center;
+        padding: 20px 350px 50px 350px;
+        line-height: 2;
+        font-size: 22px;
+        color: var(--main-text-color);
+      }
+
+      .creators-section h3 {
+        color: var(--pink);
+        padding-bottom: 20px;
+      }
+      .creators {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px;
+        text-align: center;
+        margin: 50px 200px 50px 200px;
+        padding-bottom: 80px;
+      }
+      .creators p {
+        font-size: 20px;
+        line-height: 2;
+      }
+      .creators img {
+        width: 200px;
+      }
+      .creators h4 {
+        font-size: 40px;
+        font-family: Aladin;
+      }
+      .creators a {
+        color: var(--main-text-color);
+        font-size: 20px;
+      }
+
+      .topics h3 {
+        color: var(--orange);
+        margin-bottom: 100px;
+      }
+
+      .topics ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        text-align: center;
+        padding-left: 0px;
+        grid-gap: 10px;
+        margin: 50px 300px 50px 300px;
+      }
+      .topics li {
+        width: 200px;
+        list-style-type: none;
+        font-family: Aladin;
+        padding: 10px 10px 10px 10px;
+        font-size: 25px;
+        border-radius: 20px;
+      }
+      .topics .mood-blue {
+        background-color: var(--blue);
+        color: var(--orange);
+      }
+      .topics .mood-pink {
+        background-color: var(--pink);
+        color: var(--background-color);
+      }
+      .topics .mood-cream {
+        background-color: var(--cream);
+        color: var(--background-color);
+      }
+      .topics .mood-orange {
+        background-color: var(--orange);
+        color: var(--blue);
+      }
+      .episodes {
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 50px;
+      }
+      .episodes h3 {
+        color: var(--cream);
+        margin-bottom: 70px;
+      }
+      .episodes iframe {
+        margin-bottom: 70px;
+      }
+      .episodes a {
+        color: var(--main-text-color);
+        font-size: 20px;
+      }
+      .episodes .spotify-button {
+        margin-top: 30px;
+        background-color: var(--blue);
+        text-decoration: none;
+        padding: 15px 20px 15px 20px;
+        border-radius: 20px;
+      }
+      .episodes .apple-button {
+        margin-top: 60px;
+      }
+
+      .reviews h3 {
+        color: var(--blue);
+      }
+
+      .reviews p {
+        text-align: center;
+        font-size: 25px;
+        font-family: aladin;
+      }
+      .reviews ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-left: 0px;
+        grid-gap: 30px;
+        margin: 100px 250px 150px 250px;
+      }
+      .reviews li {
+        list-style-type: none;
+        background-color: white;
+        text-align: center;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 2;
+        padding: 50px 50px 50px 50px;
+        border-radius: 20px;
+      }
+
+      .prizes img {
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+      }
+      .prizes p {
+        text-align: center;
+        line-height: 2;
+        padding-top: 20px;
+        font-size: 20px;
+        padding-bottom: 30px;
+      }
+      footer {
+        text-align: center;
+      }
+      footer h3 {
+        color: var(--pink);
+      }
+      footer a {
+        color: var(--main-text-color);
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 3;
+      }
+      .author {
+        text-align: center;
+        background-color: #ef601e;
+      }
+      .author p {
+        color: var(--background-color);
+        font-size: 20px;
+        margin: 50px 0px 0px 0px;
+        padding: 10px 0 10px 0px;
+        color: var(--background-color);
+      }
+      .author a {
+        color: var(--background-color);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-grid">
+        <div class="header-grid-main">
+          <h1>Vamos tratar de vida</h1>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/325/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%282%29.png?1731582986"
+            alt="vamos tratar de vida logo"
+          />
+          <div>
+            <a href="#about">About the podcast</a>
+          </div>
+        </div>
+        <div class="style-pink">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/326/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%285%29.png?1731583457"
+          />
+          <div>
+            <a href="#creators">Creators</a>
+          </div>
+        </div>
+        <div class="style-cream">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/327/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%286%29.png?1731583543"
+          />
+          <div>
+            <a href="#episodes">Episodes</a>
+          </div>
+        </div>
+        <div class="style-orange">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/328/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%287%29.png?1731583628"
+          />
+          <div>
+            <a href="#reviews">Reviews</a>
+          </div>
+        </div>
+        <div class="style-orange">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/345/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%2813%29.png?1731591754"
+          />
+          <div>
+            <a href="#topics">Topics</a>
+          </div>
+        </div>
+        <div class="style-blue">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/344/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%2811%29.png?1731591466"
+          />
+          <div>
+            <a href="#prizes">Prizes</a>
+          </div>
+        </div>
+        <div class="style-beige">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/331/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%2810%29.png?1731584075"
+          />
+          <div>
+            <a href="#contacts">Contacts</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="about">
+      <h3>About the podcast</h3>
+      <p>
+        ‘Vamos tratar de vida’ means ‘Let’s talk about life’. It’s a portuguese
+        podcast, created by Mariana, Pedro and, of course, their daughter Alice.
+        During more than an hour they talk about their lives, sports, parenthood
+        questions, finance, work and daily struggles and goals. Mariana and
+        Pedro were already known on Instagram but in their podcast they share
+        much more than that, with lots of humor and love.
+      </p>
+    </section>
+    <section class="creators-section">
+      <h3>Creators</h3>
+      <div class="creators">
+        <div>
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/215/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%284%29.png?1731506931"
+            alt="pedro illustration"
+          />
+          <h4>Pedro</h4>
+          <p>
+            Pedro is a sports journalist that loves running, football and
+            singing (only podcast listeners will understand).
+          </p>
+          <a href="https://www.instagram.com/pedrofilipemaia/" target="_blank"
+            >Follow him on Instagram</a
+          >
+        </div>
+        <div>
+          <img
+            src="
+https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/216/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%281%29.png?1731507002"
+            alt="mariana illustration"
+          />
+          <h4>Mariana</h4>
+          <p>
+            Mariana is a enginner that loves construction and finance. She also
+            loves sports and for that she is known as ‘miss-fit’.
+          </p>
+          <a href="https://www.instagram.com/missfit.insta/" target="_blank"
+            >Follow her on Instagram</a
+          >
+        </div>
+        <div>
+          <img
+            src="
+https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/217/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style_%283%29.png?1731507240"
+            alt="alice illustration"
+          />
+          <h4>Alice</h4>
+          <p>
+            Alice is a 5-year-old sweet girl. Driving her parents crazy is one
+            of her favorite hobbies. She loves to ride her bike and doesn't like
+            to sleep.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="topics">
+      <h3>Topics</h3>
+      <ul>
+        <li class="mood-blue">Sports</li>
+        <li class="mood-pink">Work</li>
+        <li class="mood-cream">Parenthood</li>
+        <li class="mood-orange">Running</li>
+        <li class="mood-orange">News</li>
+        <li class="mood-cream">Finance</li>
+        <li class="mood-blue">Couple</li>
+        <li class="mood-pink">Humor</li>
+      </ul>
+    </section>
+    <section class="episodes">
+      <h3>Episodes</h3>
+      <iframe
+        style="border-radius: 20px"
+        src="https://open.spotify.com/embed/show/0UgDaxinHBCEHsc5ZAy4zW?utm_source=generator"
+        width="50%"
+        height="170"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+      <div>
+        <a
+          href="https://open.spotify.com/show/0UgDaxinHBCEHsc5ZAy4zW"
+          class="spotify-button"
+          target="_blank"
+          >Listen on Spotify</a
+        >
+      </div>
+      <div class="apple-button">
+        <a
+          href="https://podcasts.apple.com/us/podcast/vamos-tratar-de-vida/id1736525667"
+          target="_blank"
+          >Apple Podcasts</a
+        >
+      </div>
+    </section>
+    <section class="reviews">
+      <h3>Reviews</h3>
+      <p>4,9 ⭐ (482 reviews)</p>
+      <ul>
+        <li>
+          Um podcast familiar que aborda todos os aspectos da vida em casal sem
+          tabus e humor à mistura. Continuem!
+        </li>
+        <li>
+          Comecei a correr por causa deste podcast e agora ouço a Mariana e o
+          Pedro enquanto corro. Obrigada. Adoro o podcast!
+        </li>
+        <li>
+          Confesso que é o primeiro podcast que ouço do início ao fim. Adoro o
+          podcast. Simples e descontraído!
+        </li>
+        <li>
+          Não perco um episódio. O Pedro e a Mariana são incríveis. Divirto-me
+          com todos os episódios.
+        </li>
+      </ul>
+    </section>
+    <section class="prizes">
+      <h3>Prizes</h3>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/201/original/Internal_Homepage_Internal_Communication_Website_in_Cream_Orange_Pastel_Blue_Business_Hip_Style.png?1731497814"
+        alt="Prize Festival Podes 2021"
+      />
+      <p>
+        Prémio Podes 2021 <br />
+        People’s choice category
+      </p>
+    </section>
+    <footer>
+      <h3>Contacts</h3>
+      <div>
+        <i class="fa-brands fa-instagram"></i>
+        <a href="https://www.instagra.com/vamostratardevida"
+          >vamostratardevida</a
+        >
+      </div>
+      <div>
+        <i class="fa-regular fa-envelope"></i>
+        <a href="mailto:vamostratardevida@gmail.com"
+          >vamostratardevida@gmail.com</a
+        >
+      </div>
+    </footer>
+    <section class="author">
+      <p>
+        This project was coded by
+        <a href="https://github.com/beatrizevedo" target="_blank"
+          >Beatriz Azevedo</a
+        >
+      </p>
+    </section>
+  </body>
+</html>
